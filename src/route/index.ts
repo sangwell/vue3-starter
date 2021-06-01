@@ -1,19 +1,33 @@
 import {createRouter, createWebHashHistory} from "vue-router";
 
-const home = () => import("../components/Home.vue");
 const login = () => import("../components/Login.vue");
+const main = () => import("../components/Main.vue");
+const device = () => import("../components/Device.vue");
+const user = () => import("../components/User.vue");
 
 const routes = [
-    {path: "/", redirect: "/home"},
-    {
-        path: "/home",
-        name: "home",
-        component: home
-    },
+    {path: "/", redirect: "/login"},
     {
         path: "/login",
         name: "login",
         component: login
+    },
+    {
+        path: "/main",
+        name: "main",
+        component: main,
+        children: [
+            {
+                // 当 /main/device 匹配成功，
+                // Device 会被渲染在 User 的 <router-view> 中
+                path: 'device',
+                component: device
+            },
+            {
+                path: 'user',
+                component: user
+            },
+        ]
     }
 ];
 export const router = createRouter({

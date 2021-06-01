@@ -1,19 +1,5 @@
 <template>
-    <!--<HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />-->
-    <div class="main-layout">
-        <div class="left">
-            <h1>菜单</h1>
-            <p>
-                <router-link to="/home">Go to Home</router-link>
-            </p>
-            <p>
-                <router-link to="/login">Go to Login</router-link>
-            </p>
-        </div>
-        <div class="right">
-            <router-view></router-view>
-        </div>
-    </div>
+    <router-view></router-view>
 </template>
 
 <script lang="ts">
@@ -35,19 +21,6 @@
         -moz-osx-font-smoothing: grayscale;
         /*text-align: center;*/
         color: #2c3e50;
-        margin-top: 60px;
-    }
-
-    .main-layout {
-        position: relative;
-    }
-
-    .left {
-        float: left;
-        border: 1px solid #222;
-    }
-
-    .right {
-        float: left;
+        margin-top: 30px;
     }
 </style>
