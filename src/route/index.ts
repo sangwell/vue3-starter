@@ -17,14 +17,17 @@ const routes = [
         name: "main",
         component: main,
         children: [
+            {path: '', redirect: "/main/device"},
             {
                 // 当 /main/device 匹配成功，
                 // Device 会被渲染在 User 的 <router-view> 中
-                path: 'device',
+                path: '/main/device',
+                name: "device",
                 component: device
             },
             {
-                path: 'user',
+                path: '/main/user',
+                name: "user",
                 component: user
             },
         ]
